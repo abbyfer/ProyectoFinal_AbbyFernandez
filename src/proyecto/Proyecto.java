@@ -16,6 +16,7 @@ public class Proyecto {
     private Lista listaContactos;
     static Scanner sc = new Scanner(System.in);
 
+    //imprime portada
     public static void main(String[] args) {
         mostrarPortada();
     }
@@ -49,7 +50,6 @@ public class Proyecto {
                 new Proyecto();
             }
         });
-
         JPanel panelBoton = new JPanel();
         panelBoton.setBackground(new Color(173, 216, 230));
         panelBoton.add(iniciar);
@@ -65,7 +65,7 @@ public class Proyecto {
         listaContactos = new Lista();
         iniciarAgenda();
     }
-
+//muestra el menu, ejucuta sus opciones
     private void iniciarAgenda() {
         int op;
         do {
@@ -99,11 +99,13 @@ public class Proyecto {
                 case 6:
                     listaContactos.elegirEmergencia();
                     break;
-                default:
+                case 7: 
                     listaContactos.contarRegresivo(5);
                     System.out.println("Gracias por usar la agenda de contactos virtual");
                     break;
+                default : 
+                    System.out.println("Opcion invalida");
             }
-        } while (op != 7);
+        } while (op!=7);
     }
 }
